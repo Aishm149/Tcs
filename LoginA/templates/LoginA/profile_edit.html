@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AllAboutResumes</title>
+</head>
+<body>
+    {% extends 'LoginA/base.html' %}
+    {% block content %}
+    <h1>Personal Details</h1>
+    <p>User Name : {{ Profile.userName }} </p>
+    <p>Email : {{ Profile.email }}</p>
+
+    <form method="POST" class="form.profile-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}
+</body>
+</html>
